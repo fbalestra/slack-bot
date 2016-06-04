@@ -12,7 +12,7 @@ app = Flask(__name__)
 # TODO(julien) Ask DevOps to configure this environment variable in live environment.
 SLACK_TOKEN = os.environ.get('SLACK_TOKEN')
 
-@app.route('/slack', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def inbound():
     print (request.path)
 
