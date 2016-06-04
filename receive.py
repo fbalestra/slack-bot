@@ -34,7 +34,7 @@ def inbound():
         slack.send_message(channel_id,
                 "wait a moment, %s. I'm checking *%d" % (username, job_id))
         #job = check_job(job_id)
-        message = "Received message: " + job_id
+        message = "Received message: " + str(job_id)
         slack.send_message(channel_id, message)
     else:
         slack.send_message(channel_id, "I don't know what to do :(")
