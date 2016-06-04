@@ -2,8 +2,8 @@ import os
 from slackclient import SlackClient
 
 # TODO(julien) Ask DevOps to configure this environment variable in live environment.
-SLACKBOT_TOKEN = os.environ.get('SLACK_TOKEN')
-slack_client = SlackClient(SLACKBOT_TOKEN)
+SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')
+slack_client = SlackClient(SLACK_BOT_TOKEN)
 
 
 def list_channels():
@@ -14,13 +14,13 @@ def list_channels():
 
 
 def send_message(channel_id, message, attachments=None):
-    slack_client.api_call(
+    return slack_client.api_call(
         "chat.postMessage",
         channel=channel_id,
         text=message,
         username='julien test',
         attachments=attachments,
-        icon_emoji=':stitch:'
+        icon_emoji=':flag-jp:'
     )
 
 
