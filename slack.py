@@ -5,11 +5,13 @@ from slackclient import SlackClient
 SLACKBOT_TOKEN = os.environ.get('SLACK_TOKEN')
 slack_client = SlackClient(SLACKBOT_TOKEN)
 
+
 def list_channels():
     channels_call = slack_client.api_call("channels.list")
     if channels_call.get('ok'):
         return channels_call['channels']
     return None
+
 
 def send_message(channel_id, message, attachments=None):
     slack_client.api_call(
@@ -20,6 +22,7 @@ def send_message(channel_id, message, attachments=None):
         attachments=attachments,
         icon_emoji=':stitch:'
     )
+
 
 def channel_info(channel_id):
     channel_info = slack_client.api_call("channels.info", channel=channel_id)
