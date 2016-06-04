@@ -1,1 +1,1 @@
-web: gunicorn slack-bot.wsgi --log-file -
+web: gunicorn receive:app --log-file -
