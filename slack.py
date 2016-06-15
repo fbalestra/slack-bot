@@ -3,6 +3,7 @@ from slackclient import SlackClient
 
 # TODO(julien) Ask DevOps to configure this environment variable in live environment.
 SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')
+
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
 
@@ -34,9 +35,6 @@ def get_private_channel(user_id):
 
 def main():
     pass
-    #print(get_private_channel('U1E5R1QKA'))
-    # print slack_client.api_call("users.list")['members'][0]
-    #send_message("D1E5RD1RN","haha!")
 
 if __name__ == '__main__':
     main()
